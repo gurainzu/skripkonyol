@@ -10,12 +10,12 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @	IN	NS	usk13894.net.
-@	IN	A	172.16.1.118
-www	IN	A	172.16.1.118
-voip	IN	A	172.16.1.118
-mail	IN	A	172.16.1.118
-pma	IN	A	172.16.1.118
+@	IN	A	192.168.0.210
+www	IN	A	192.168.0.210
+voip	IN	A	192.168.0.210
+mail	IN	A	192.168.0.210
+pma	IN	A	192.168.0.210
 cctv	IN	A	172.16.31.131
-cacti	IN	A	172.16.1.118
+cacti	IN	A	192.168.0.210
 usk13894.net.	IN	MX	10	mail.usk13894.net.
 _sip._udp.voip.usk13894.net	86400	IN	SRV	20	5	5060	voip.usk13894.net.
