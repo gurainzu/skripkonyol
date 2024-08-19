@@ -50,6 +50,15 @@ echo -e "\e[92mComplete \e[1mInstalling MariaDB Server"
 
 #Configuring MariaDB Server
 echo -e "\e[92mStarting \e[1mConfiguring MariaDB Server"
-sudo mysql -e "CREATE DATABASE IF NOT EXISTS wp-absen"
-sudo mysql -e "CREATE DATABASE IF NOT EXISTS wp-usk"
+mysql -e "CREATE DATABASE IF NOT EXISTS wp-absen"
+mysql -e "CREATE DATABASE IF NOT EXISTS wp-usk"
 echo -e "\e[92mComplete \e[1mConfiguring MariaDB Server"
+
+#Downloading Wordpress in Apache
+echo -e "\e[92mStarting \e[1mDownloading Wordpress in Apache"
+apt install unzip wget -y
+cd /var/www/
+wget https://wordpress.org/latest.zip
+unzip latest.zip && mv wordpress wp-usk
+unzip latest.zip && mv wordpress wp-absen
+echo -e "\e[92mComplete \e[1mDownloading Wordpress in Apache"
