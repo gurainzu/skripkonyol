@@ -62,3 +62,18 @@ wget https://wordpress.org/latest.zip
 unzip latest.zip && mv wordpress wp-usk
 unzip latest.zip && mv wordpress wp-absen
 echo -e "\e[92mComplete \e[1mDownloading Wordpress in Apache"
+
+#Configuring Virtual Host in Apache
+mv /home/antix/skripkonyol/apacheconf/wp-usk.conf /etc/apache2/sites-available/
+mv /home/antix/skripkonyol/apacheconf/wp-absen.conf /etc/apache2/sites-available/
+mv /home/antix/skripkonyol/apacheconf/pma-usk.conf /etc/apache2/sites-available/
+mv /home/antix/skripkonyol/apacheconf/pma-absen.conf /etc/apache2/sites-available/
+mv /home/antix/skripkonyol/apacheconf/mail-absen.conf /etc/apache2/sites-available/
+mv /home/antix/skripkonyol/apacheconf/cacti-usk.conf /etc/apache2/sites-available/
+a2ensite wp-usk.conf
+a2ensite wp-absen.conf
+a2ensite pma-usk.conf
+a2ensite pma-absen.conf
+a2ensite mail-absen.conf
+a2ensite cacti-usk.conf
+systemctl restart apache2 && systemctl status apache2
