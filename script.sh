@@ -17,4 +17,14 @@ apt update -y
 #Installing BIND9
 echo -e "Normal \e[1mInstalling BIND9"
 apt install bind9 bind9utils dnsutils -y
-echo -e "Normal \e[1mInstalling Complete, generating status"
+echo -e "Normal \e[1mInstalling Complete, configuring BIND9"
+
+#Configuring BIND9
+echo -e "Normal \e[1mCopying Configuration"
+mv /etc/bind/named.conf.local /etc/bind/named.comf.local-back
+mv /etc/bind/named.conf.options /etc/bind/named.conf.options-back
+mv /home/antix/skripkonyol/db.172 /etc/bind/
+mv /home/antix/skripkonyol/db.absen /etc/bind/
+mv /home/antix/skripkonyol/db.usk /etc/bind/
+echo -e "Normal \e[1mRestarting Services, generating status when complete."
+systemctl status bind9
