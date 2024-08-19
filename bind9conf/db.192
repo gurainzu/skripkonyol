@@ -2,21 +2,21 @@
 ; BIND reverse data file for local loopback interface
 ;
 $TTL	604800
-@	IN	SOA	usk13894.id. root.usk13894.id. (
+@	IN	SOA	usk13894.net. root.usk13894.net. (
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN	NS	usk13894.id.
-210.0.168	IN	PTR	usk13894.id.
-210.0.168	IN	PTR	www.usk13894.id.
-210.0.168	IN	PTR	voip.usk13894.id.
-210.0.168	IN	PTR	mail.usk13894.id.
-210.0.168	IN	PTR	pma.usk13894.id.
-210.0.168	IN	PTR	cctv.usk13894.id.
-210.0.168	IN	PTR	cacti.usk13894.id.
+@	IN	NS	usk13894.net.
+210.0.168	IN	PTR	usk13894.net.
+210.0.168	IN	PTR	www.usk13894.net.
+210.0.168	IN	PTR	voip.usk13894.net.
+210.0.168	IN	PTR	mail.usk13894.net.
+210.0.168	IN	PTR	pma.usk13894.net.
+210.0.168	IN	PTR	cctv.usk13894.net.
+210.0.168	IN	PTR	cacti.usk13894.net.
 210.0.168	IN	PTR	absen2.my.id.
 210.0.168	IN	PTR	www.absen2.my.id.
 210.0.168	IN	PTR	voip.absen2.my.id.

@@ -31,6 +31,7 @@ mv /home/antix/skripkonyol/bind9conf/named.conf.local /etc/bind/
 mv /home/antix/skripkonyol/bind9conf/named.conf.options /etc/bind/
 echo -e "\e[92mComplete \e[1mRestarting Services, generating status when complete."
 systemctl restart bind9
+systemctl status bind9
 
 #Installing Apache2
 echo -e "\e[92mStarting \e[1mInstalling Apache2"
