@@ -36,4 +36,20 @@ systemctl status bind9
 #Installing Apache2
 echo -e "\e[92mStarting \e[1mInstalling Apache2"
 apt install apache2 -y
-echo -e "\e[92mComplete \e[1mInstalling BIND9"
+echo -e "\e[92mComplete \e[1mInstalling Apache2"
+
+#Installing PHP/PMA
+echo -e "\e[92mStarting \e[1mInstalling PHP/PMA"
+apt install php php-mysql php-json phpmyadmin -y
+echo -e "\e[92mComplete \e[1mInstalling PHP/PMA"
+
+#Installing MariaDB Server
+echo -e "\e[92mStarting \e[1mInstalling MariaDB Server"
+apt install mariadb-server -y
+echo -e "\e[92mComplete \e[1mInstalling MariaDB Server"
+
+#Configuring MariaDB Server
+echo -e "\e[92mStarting \e[1mConfiguring MariaDB Server"
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS wp-absen"
+sudo mysql -e "CREATE DATABASE IF NOT EXISTS wp-usk"
+echo -e "\e[92mComplete \e[1mConfiguring MariaDB Server"
