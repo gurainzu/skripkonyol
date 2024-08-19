@@ -1,0 +1,21 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	usk13894.net. root.usk13894.net. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	usk13894.net.
+@	IN	A	172.16.1.118
+www	IN	A	172.16.1.118
+voip	IN	A	172.16.1.118
+mail	IN	A	172.16.1.118
+pma	IN	A	172.16.1.118
+cctv	IN	A	172.16.31.131
+cacti	IN	A	172.16.1.118
+usk13894.net.	IN	MX	10	mail.usk13894.net.
+_sip._udp.voip.usk13894.net	86400	IN	SRV	20	5	5060	voip.usk13894.net.

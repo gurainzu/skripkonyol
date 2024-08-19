@@ -1,0 +1,19 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	absen2.my.id. root.absen2.my.id. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	absen2.my.id.
+@	IN	A	172.16.31.133
+www	IN	A	172.16.31.133
+voip	IN	A	172.16.31.131
+mail	IN	A	172.16.31.133
+pma	IN	A	172.16.31.133
+absen2.my.id.	IN	MX	10	mail.absen2.my.id.
+_sip._udp.voip.absen2.my.id.	86400	IN	SRV	20	5	5060	voip.absen2.my.id.
