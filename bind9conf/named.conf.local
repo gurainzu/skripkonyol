@@ -16,7 +16,7 @@ zone "absen2.my.id" {
         file "/etc/bind/db.absen";
 };
 
-zone "172.in-addr.arpa" {
+zone "192.in-addr.arpa" {
         type master;
-        file "/etc/bind/db.172";
+        file "/etc/bind/db.192";
 };
