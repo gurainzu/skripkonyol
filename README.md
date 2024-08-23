@@ -23,12 +23,26 @@ cari aja di youtube banyak, xD
 ` auto enp0s8 ` \
 ` iface enp0s8 inet static ` \
 `         address 172.16.31.130/25 ` \
-`         gateway 192.168.31.129 ` \
+`         gateway 192.168.31.129 ` 
 
 > Ini gua pake 2 interface, enp0s3 bridge, enp0s8 host only.
 
 ## Konfigurasi Repository Debian 11 Bullseye
 >Ada kok filenya di folder "repository" di repo ini, tinggal copy paste aja.
 
-<sub>jangan tanya gua kenapa gua gapake repo antix</sub>
+<sup>jangan tanya gua kenapa gua gapake repo antix</sup>
+
 ## Instalasi DNS Server - BIND9
+>Semua file konfigurasi udah ada di repo ini, tinggal copy paste sesuain kondisi masing masing.
+
+`$ apt update` \
+`$ apt install bind9 bind9utils dnsutils -y` \
+`$ cd /etc/bind/` \
+`$ cp db.local db.usk` \
+`$ nano db.usk` \
+`$ cp db.local db.absen` \
+`$ nano db.absen` \
+`$ nano named.conf.local` \
+`$ nano named.conf.options` \
+`$ systemctl restart bind9` \
+`$ systemctl stsatus bind9`
