@@ -46,3 +46,21 @@ cari aja di youtube banyak, xD
 `$ nano named.conf.options` \
 `$ systemctl restart bind9` \
 `$ systemctl stsatus bind9`
+
+## Instalasi Wordpress & VHost Apache2
+>Semua file konfigurasi udah ada di repo ini, tinggal copy paste sesuain kondisi masing masing.
+
+`$ apt install apache2 wget unzip -y` \
+`$ cd /var/www/` \
+`$ wget https://wordpress.org/latest.zip` \
+`$ unzip latest.zip && mv wordpress wp-usk` \
+`$ unzip latest.zip && mv wordpress wp-absen` \
+`$ chmod -R 777 wp-usk` \
+`$ chmod -R 777 wp-absen` \
+`$ cd /etc/apache2/sites-available` \
+`$ cp 000-default.conf wp-usk.conf && nano wp-usk.conf` \
+`$ cp 000-default.conf wp-absen.conf && nano wp-absen.conf` \
+`$ cp 000-default.conf pma-usk.conf && nano pma-usk.conf` \
+`$ cp 000-default.conf pma-absen.conf && nano pma-absen.conf` \
+`$ cp 000-default.conf mail-absen.conf && nano mail-absen.conf` \
+`$ cp 000-default.conf cacti-usk.conf && nano cacti-usk.conf` 
