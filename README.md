@@ -38,10 +38,9 @@ cari aja di youtube banyak, xD
 `$ apt update` \
 `$ apt install bind9 bind9utils dnsutils -y` \
 `$ cd /etc/bind/` \
-`$ cp db.local db.usk` \
-`$ nano db.usk` \
-`$ cp db.local db.absen` \
-`$ nano db.absen` \
+`$ cp db.local db.usk && nano db.usk` \
+`$ cp db.local db.absen && nano db.absen` \
+`$ cp db.127 db.172 && nano db.172` \
 `$ nano named.conf.local` \
 `$ nano named.conf.options` \
 `$ systemctl restart bind9` \
