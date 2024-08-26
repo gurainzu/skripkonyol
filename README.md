@@ -68,5 +68,5 @@ cari aja di youtube banyak, xD
 `$ a2ensite pma-usk.conf && systemctl reload apache2` \
 `$ a2ensite pma-absen.conf && systemctl reload apache2` \
 `$ a2ensite mail-absen.conf && systemctl reload apache2` \
-`$ a2ensite cacti-usk.conf && systemctl reload apache2`
+`$ a2ensite cacti-usk.conf && systemctl reload apache2` \
 `$ systemctl restart apache2`
