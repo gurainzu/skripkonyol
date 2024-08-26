@@ -7,23 +7,25 @@ Berdasar soal : [USK 2022-2023](https://drive.google.com/file/d/1fjrXfFwDtSrC8JP
 cari aja di youtube banyak, xD
 
 ## Konfigurasi Network
-` # This file describes the network interfaces available on your system` \
-` # and how to activate them. For more information, see interfaces(5).`
+```console
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
-` source /etc/network/interfaces.d/* `
+source /etc/network/interfaces.d/* 
 
-` # The loopback network interface` \
-` auto lo ` \
-` iface lo inet loopback ` 
+# The loopback network interface
+auto lo
+iface lo inet loopback
 
-` # The primary network interface` \
-` auto enp0s3 ` \
-` iface enp0s3 inet dhcp `
+# The primary network interface
+auto enp0s3
+iface enp0s3 inet dhcp
 
-` auto enp0s8 ` \
-` iface enp0s8 inet static ` \
-`         address 172.16.31.130/25 ` \
-`         gateway 192.168.31.129 ` 
+auto enp0s8
+iface enp0s8 inet static
+        address 172.16.31.130/25
+        gateway 192.168.31.129
+```
 
 > Ini gua pake 2 interface, enp0s3 bridge, enp0s8 host only.
 
