@@ -62,4 +62,11 @@ cari aja di youtube banyak, xD
 `$ cp 000-default.conf pma-usk.conf && nano pma-usk.conf` \
 `$ cp 000-default.conf pma-absen.conf && nano pma-absen.conf` \
 `$ cp 000-default.conf mail-absen.conf && nano mail-absen.conf` \
-`$ cp 000-default.conf cacti-usk.conf && nano cacti-usk.conf` 
+`$ cp 000-default.conf cacti-usk.conf && nano cacti-usk.conf` \
+`$ a2ensite wp-usk.conf && systemctl reload apache2` \
+`$ a2ensite wp-absen.conf && systemctl reload apache2` \
+`$ a2ensite pma-usk.conf && systemctl reload apache2` \
+`$ a2ensite pma-absen.conf && systemctl reload apache2` \
+`$ a2ensite mail-absen.conf && systemctl reload apache2` \
+`$ a2ensite cacti-usk.conf && systemctl reload apache2`
+`$ systemctl restart apache2`
