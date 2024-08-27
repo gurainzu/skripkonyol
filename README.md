@@ -55,6 +55,8 @@ deb http://security.debian.org/debian-security/ bullseye-security main contrib n
 
 ## Instalasi DNS Server - BIND9
 
+>Semua file konfigurasi ada di repo ini, tinggal copy paste aja.
+
 ```console
 
 root@gurainzu:~# apt update
@@ -71,6 +73,8 @@ root@gurainzu:~# systemctl stsatus bind9
 ```
 
 ## Instalasi Wordpress & VHost Apache2
+
+>Semua file konfigurasi ada di repo ini, tinggal copy paste aja.
 
 ```console
 
