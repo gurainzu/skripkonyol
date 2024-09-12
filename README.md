@@ -101,3 +101,17 @@ root@gurainzu:~# a2ensite cacti-usk.conf && systemctl reload apache2
 root@gurainzu:~# systemctl restart apache2
 
 ```
+
+## Instalasi LAMP
+
+```console
+
+root@gurainzu:~# apt install mariadb-server -y
+root@gurainzu:~# mysql_secure_installation
+root@gurainzu:~# mysql -u root -p
+MariaDB [(none)]> create database wpusk;
+MariaDB [(none)]> create database wpabsen;
+MariaDB [(none)]> show databases;
+MariaDB [(none)]> quit;
+root@gurainzu:~# apt install php libapache2-mod-php php-mysql phpmyadmin -y
+```
