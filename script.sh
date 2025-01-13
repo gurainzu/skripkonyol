@@ -7,13 +7,13 @@ if [ "$EUID" -ne 0 ]
 fi
 
 #Cloning Repository
-echo -e "\e[92mStarting \e[1mCloning and Updating Repository"
-cd /home/antix
-git clone https://github.com/gurainzu/skripkonyol
-mv /etc/apt/sources.list /etc/apt/sources.list-back
-mv /home/antix/skripkonyol/repository/sources.list /etc/apt/
-apt update -y
-echo -e "\e[92mComplete \e[1mCloning and Updating Repository"
+#echo -e "\e[92mStarting \e[1mCloning and Updating Repository"
+#cd /home/antix
+#git clone https://github.com/gurainzu/skripkonyol
+#mv /etc/apt/sources.list /etc/apt/sources.list-back
+#mv /home/antix/skripkonyol/repository/sources.list /etc/apt/
+#apt update -y
+#echo -e "\e[92mComplete \e[1mCloning and Updating Repository"
 
 #Installing BIND9
 echo -e "\e[92mStarting \e[1mInstalling BIND9"
