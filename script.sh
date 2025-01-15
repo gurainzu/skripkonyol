@@ -56,8 +56,8 @@ echo -e "\e[92mComplete \e[1mInstalling MariaDB Server"
 #Configuring MariaDB Server
 sleep 2
 echo -e "\e[92mStarting \e[1mConfiguring MariaDB Server"
-mysqladmin -u root -p -e create wp-absen;
-mysqladmin -u root -p -e create wp-usk;
+mysqladmin -u root -p create wpabsen;
+mysqladmin -u root -p create wpusk;
 echo -e "\e[92mComplete \e[1mConfiguring MariaDB Server"
 sleep 2
 
