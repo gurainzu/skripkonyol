@@ -48,8 +48,8 @@ sed -i "s/domain/$domain1/g" /etc/bind/$dbfilereverse
 sed -i "s/reverseIP/$ipreverse1/g" /etc/bind/$dbfilereverse
 sleep 2
 read -p "Enter your reverse IP that you use in second db file, example=10.31.16: " ipreverse2
-sed -i "s/domain2/$domain2/g" /etc/bind/$dbfilereverse
-sed -i "s/reverseIP2/$ipreverse2/g" /etc/bind/$dbfilereverse
+sed -i "s/domainkedua/$domain2/g" /etc/bind/$dbfilereverse
+sed -i "s/reverseIPkedua/$ipreverse2/g" /etc/bind/$dbfilereverse
 sleep 2
 echo "Success replacing domain and IP for your BIND Configuration, Restarting...."
 systemctl restart bind9
