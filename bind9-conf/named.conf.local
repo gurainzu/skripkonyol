@@ -18,5 +18,5 @@ zone "DOMAIN" {
 
 zone "firstblock.in-addr.arpa" {
         type master;
-        file "/etc/bind/dbfilereverse";
+        file "/etc/bind/filedbreverse";
 };
