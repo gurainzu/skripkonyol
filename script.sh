@@ -2,28 +2,20 @@
 
 #Run as root pls
 if [ "$EUID" -ne 0 ]
-  then echo "Tolong run as root"
+  then echo "Please run as root"
   exit
 fi
 
-#Cloning Repository
-#echo -e "\e[92mStarting \e[1mCloning and Updating Repository"
-#cd /home/antix
-#git clone https://github.com/gurainzu/skripkonyol
-#mv /etc/apt/sources.list /etc/apt/sources.list-back
-#mv /home/antix/skripkonyol/repository/sources.list /etc/apt/
-#apt update -y
-#echo -e "\e[92mComplete \e[1mCloning and Updating Repository"
-
 #Installing BIND9
+echo "Starting Installing BIND"
 sleep 2
-echo -e "\e[92mStarting \e[1mInstalling BIND9"
 apt install bind9 bind9utils dnsutils -y
-echo -e "\e[92mComplete \e[1mInstalling Complete, configuring BIND9"
+echo "Complete Installing BIND"
 sleep 2
 
 #Configuring BIND9
-echo -e "\e[92mStarting \e[1mCopying Configuration"
+echo "Starting Copying Template Configuration"
+sleep 2
 mv /etc/bind/named.conf.local /etc/bind/named.comf.local-back
 mv /etc/bind/named.conf.options /etc/bind/named.conf.options-back
 mv /home/antix/skripkonyol/bind9-conf/db.192 /etc/bind/
@@ -33,8 +25,11 @@ mv /home/antix/skripkonyol/bind9-conf/db.usk /etc/bind/
 mv /home/antix/skripkonyol/bind9-conf/named.conf.local /etc/bind/
 mv /home/antix/skripkonyol/bind9-conf/named.conf.options /etc/bind/
 sleep 2
-echo -e "\e[92mComplete \e[1mRestarting Services, generating status when complete."
-systemctl restart bind9
+echo "Complete Copying Template Configuration"
+sleep 1
+echo "Starting to replace all the domain and IP's"
+sleep 2
+
 
 #Installing Apache2
 sleep 2
