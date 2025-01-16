@@ -33,14 +33,26 @@ echo "Starting to replace all the domain and IP's"
 sleep 2
 read -p "Enter your domain for your first db file, example=usk13894.net: " domain1
 sed -i "s/domain/$domain1/g" /etc/bind/$dbfile1
+sleep 2
 read -p "Enter your IP for your first db file, example=172.16.31.10: " ipdomain1
 sed -i "s/IP/$ipdomain1/g" /etc/bind/$dbfile1
+sleep 2
 read -p "Enter your domain for your second db file, example=absen2.my.id: " domain2
 sed -i "s/domain/$domain2/g" /etc/bind/$dbfile2
+sleep 2
 read -p "Enter your IP for your second db file, example=172.16.31.10: " ipdomain2
 sed -i "s/IP/$ipdomain2/g" /etc/bind/$dbfile2
-echo "Success replacing domain and IP for your BIND Configuration"
-
+sleep 2
+read -p "Enter your reverse IP that you use in first db file, example=10.31.16: " ipreverse1
+sed -i "s/domain/$domain1/g" /etc/bind/$dbfilereverse
+sed -i "s/reverseIP/$ipreverse1/g" /etc/bind/$dbfilereverse
+sleep 2
+read -p "Enter your reverse IP that you use in second db file, example=10.31.16: " ipreverse2
+sed -i "s/domain2/$domain2/g" /etc/bind/$dbfilereverse
+sed -i "s/reverseIP2/$ipreverse2/g" /etc/bind/$dbfilereverse
+sleep 2
+echo "Success replacing domain and IP for your BIND Configuration, Restarting...."
+systemctl restart bind9
 
 #Installing Apache2
 sleep 2

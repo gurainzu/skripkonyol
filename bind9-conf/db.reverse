@@ -17,8 +17,8 @@ reverseIP	IN	PTR	mail.domain.
 reverseIP	IN	PTR	pma.domain.
 reverseIP	IN	PTR	cctv.domain.
 reverseIP	IN	PTR	cacti.domain.
-reverseIP	IN	PTR	[Domain2].
-reverseIP	IN	PTR	www.[Domain2].
-reverseIP	IN	PTR	voip.[Domain2].
-reverseIP	IN	PTR	mail.[Domain2].
-reverseIP	IN	PTR	pma.[Domain2].
+reverseIP2	IN	PTR	domain2.
+reverseIP2	IN	PTR	www.domain2.
+reverseIP2	IN	PTR	voip.domain2.
+reverseIP2	IN	PTR	mail.domain2.
+reverseIP2	IN	PTR	pma.domain2.
