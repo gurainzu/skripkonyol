@@ -1,0 +1,24 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	[Domain]. root.[Domain]. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	[Domain].
+[ReverseIP]	IN	PTR	[Domain].
+[ReverseIP]	IN	PTR	www.[Domain].
+[ReverseIP]	IN	PTR	voip.[Domain].
+[ReverseIP]	IN	PTR	mail.[Domain].
+[ReverseIP]	IN	PTR	pma.[Domain].
+[ReverseIP]	IN	PTR	cctv.[Domain].
+[ReverseIP]	IN	PTR	cacti.[Domain].
+[ReverseIP]	IN	PTR	[Domain2].
+[ReverseIP]	IN	PTR	www.[Domain2].
+[ReverseIP]	IN	PTR	voip.[Domain2].
+[ReverseIP]	IN	PTR	mail.[Domain2].
+[ReverseIP]	IN	PTR	pma.[Domain2].

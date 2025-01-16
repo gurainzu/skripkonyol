@@ -18,12 +18,12 @@ echo "Starting Copying Template Configuration"
 sleep 2
 mv /etc/bind/named.conf.local /etc/bind/named.comf.local-back
 mv /etc/bind/named.conf.options /etc/bind/named.conf.options-back
-mv /home/antix/skripkonyol/bind9-conf/db.192 /etc/bind/
-mv /home/antix/skripkonyol/bind9-conf/db.172 /etc/bind/
-mv /home/antix/skripkonyol/bind9-conf/db.absen /etc/bind/
-mv /home/antix/skripkonyol/bind9-conf/db.usk /etc/bind/
-mv /home/antix/skripkonyol/bind9-conf/named.conf.local /etc/bind/
-mv /home/antix/skripkonyol/bind9-conf/named.conf.options /etc/bind/
+read -p "Enter the name of your db file, example=db.usk: " dbfile1
+cp /home/antix/skripkonyol/bind9-conf/db.local /etc/bind/$dbfile1
+read -p "Enter the name of your second db file, example=db.usk: " dbfile2
+cp /home/antix/skripkonyol/bind9-conf/db.local /etc/bind/$dbfile2
+cp /home/antix/skripkonyol/bind9-conf/named.conf.local /etc/bind/
+cp /home/antix/skripkonyol/bind9-conf/named.conf.options /etc/bind/
 sleep 2
 echo "Complete Copying Template Configuration"
 sleep 1

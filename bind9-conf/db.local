@@ -1,0 +1,21 @@
+;
+; BIND data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	[Domain]. root.[Domain]. (
+			      2		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+;
+@	IN	NS	[Domain].
+@	IN	A	[IP]
+www	IN	A	[IP]
+voip	IN	A	[IP]
+mail	IN	A	[IP]
+pma	IN	A	[IP]
+cctv	IN	A	172.16.31.131
+cacti	IN	A	[IP]
+[Domain].	IN	MX	10	mail.[Domain].
+_sip._udp.voip.[Domain]	86400	IN	SRV	20	5	5060	voip.[Domain].
