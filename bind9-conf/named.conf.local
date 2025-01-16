@@ -6,17 +6,17 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "usk13894.net" {
+zone "domain" {
         type master;
-        file "/etc/bind/db.usk";
+        file "/etc/bind/dbfile";
 };
 
-zone "absen2.my.id" {
+zone "DOMAIN" {
         type master;
-        file "/etc/bind/db.absen";
+        file "/etc/bind/DBFILE";
 };
 
-zone "172.in-addr.arpa" {
+zone "firstblock.in-addr.arpa" {
         type master;
-        file "/etc/bind/db.172";
+        file "/etc/bind/dbfilereverse";
 };

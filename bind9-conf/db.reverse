@@ -17,8 +17,8 @@ reverseIP	IN	PTR	mail.domain.
 reverseIP	IN	PTR	pma.domain.
 reverseIP	IN	PTR	cctv.domain.
 reverseIP	IN	PTR	cacti.domain.
-reverseIPkedua	IN	PTR	domainkedua.
-reverseIP2kedua	IN	PTR	www.domainkedua.
-reverseIP2kedua	IN	PTR	voip.domainkedua.
-reverseIP2kedua	IN	PTR	mail.domainkedua.
-reverseIP2kedua	IN	PTR	pma.domainkedua.
+kedua	IN	PTR	DOMAIN.
+kedua	IN	PTR	www.DOMAIN.
+kedua	IN	PTR	voip.DOMAIN.
+kedua	IN	PTR	mail.DOMAIN.
+kedua	IN	PTR	pma.DOMAIN.

@@ -48,9 +48,16 @@ sed -i "s/domain/$domain1/g" /etc/bind/$dbfilereverse
 sed -i "s/reverseIP/$ipreverse1/g" /etc/bind/$dbfilereverse
 sleep 2
 read -p "Enter your reverse IP that you use in second db file, example=10.31.16: " ipreverse2
-sed -i "s/domainkedua/$domain2/g" /etc/bind/$dbfilereverse
-sed -i "s/reverseIPkedua/$ipreverse2/g" /etc/bind/$dbfilereverse
+sed -i "s/DOMAIN/$domain2/g" /etc/bind/$dbfilereverse
+sed -i "s/kedua/$ipreverse2/g" /etc/bind/$dbfilereverse
 sleep 2
+read -p "Enter the first block of your IP, example=172: " firstblock
+sed -i "s/domain/$domain1/g" /etc/bind/named.conf.local
+sed -i "s/DOMAIN/$domain2/g" /etc/bind/named.conf.local
+sed -i "s/firstblock/$firstblock/g" /etc/bind/named.conf.local
+sed -i "s/dbfile/$dbfile1/g" /etc/bind/named.conf.local
+sed -i "s/DBFILE/$dbfile2/g" /etc/bind/named.conf.local
+sed -i "s/dbfilereverse/$dbfilereverse/g" /etc/bind/named.conf.local
 echo "Success replacing domain and IP for your BIND Configuration, Restarting...."
 systemctl restart bind9
 
