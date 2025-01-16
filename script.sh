@@ -20,8 +20,10 @@ mv /etc/bind/named.conf.local /etc/bind/named.comf.local-back
 mv /etc/bind/named.conf.options /etc/bind/named.conf.options-back
 read -p "Enter the name of your db file, example=db.usk: " dbfile1
 cp /home/antix/skripkonyol/bind9-conf/db.local /etc/bind/$dbfile1
-read -p "Enter the name of your second db file, example=db.usk: " dbfile2
+read -p "Enter the name of your second db file, example=db.absen: " dbfile2
 cp /home/antix/skripkonyol/bind9-conf/db.local /etc/bind/$dbfile2
+read -p "Enter the name of your db reverse file, example=db.172: " dbfilereverse
+cp /home/antix/skripkonyol/bind9-conf/db.reverse /etc/bind/$dbfilereverse
 cp /home/antix/skripkonyol/bind9-conf/named.conf.local /etc/bind/
 cp /home/antix/skripkonyol/bind9-conf/named.conf.options /etc/bind/
 sleep 2
@@ -29,6 +31,15 @@ echo "Complete Copying Template Configuration"
 sleep 1
 echo "Starting to replace all the domain and IP's"
 sleep 2
+read -p "Enter your domain for your first db file, example=usk13894.net: " domain1
+sed -i "s/domain/$domain1/g" /etc/bind/$dbfile1
+read -p "Enter your IP for your first db file, example=172.16.31.10: " ipdomain1
+sed -i "s/IP/$ipdomain1/g" /etc/bind/$dbfile1
+read -p "Enter your domain for your second db file, example=absen2.my.id: " domain2
+sed -i "s/domain/$domain2/g" /etc/bind/$dbfile2
+read -p "Enter your IP for your second db file, example=172.16.31.10: " ipdomain2
+sed -i "s/IP/$ipdomain2/g" /etc/bind/$dbfile2
+echo "Success replacing domain and IP for your BIND Configuration"
 
 
 #Installing Apache2
