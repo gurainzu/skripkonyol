@@ -119,11 +119,17 @@ clear
 
 #Configuring Virtual Host in Apache
 mv /home/antix/skripkonyol/apache-conf/wp-usk.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/wp-usk.conf
 mv /home/antix/skripkonyol/apache-conf/wp-absen.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/wp-absen.conf
 mv /home/antix/skripkonyol/apache-conf/pma-usk.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/pma-absen.conf
 mv /home/antix/skripkonyol/apache-conf/pma-absen.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/pma-absen.conf
 mv /home/antix/skripkonyol/apache-conf/mail-absen.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/mail-absen.conf
 mv /home/antix/skripkonyol/apache-conf/cacti-usk.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/cacti-usk.conf
 a2ensite wp-usk.conf
 a2ensite wp-absen.conf
 a2ensite pma-usk.conf
