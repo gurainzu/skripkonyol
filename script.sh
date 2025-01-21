@@ -114,10 +114,13 @@ echo "Complete Configuring VirtualHost in Apache"
 sleep 2
 clear
 
+#Changing resolv.conf
+echo "nameserver $ipdomain1" > /etc/resolv.conf
+
 #Installing Postfix & Dovecot for Webmail
 echo "Starting installing wembail dependencies"
 sleep 2
-apt install postfix dovecot-imapd dovecot-pop3d
+apt install postfix dovecot-imapd dovecot-pop3d -y
 clear
 
 #Configuring Postfix & Dovecot for Webmail
@@ -126,11 +129,11 @@ maildirmake.dovecot /etc/skel/Maildir
 dpkg-reconfigure postfix
 systemctl restart postfix
 mv /etc/dovecot/dovecot.conf /etc/dovecot/dovecot.conf-back
-mv /etc/dovecot/10-auth.conf /etc/dovecot/10-auth.conf-back
-mv /etc/dovecot/10-mail.conf /etc/dovecot/10-mail.conf-back
+mv /etc/dovecot/conf.d/10-auth.conf /etc/dovecot/conf.d/10-auth.conf-back
+mv /etc/dovecot/conf.d/10-mail.conf /etc/dovecot/conf.d/10-mail.conf-back
 cp ~/skripkonyol/mailserver-conf/dovecot.conf /etc/dovecot/dovecot.conf
-cp ~/skripkonyol/mailserver-conf/10-auth.conf /etc/dovecot/10-auth.conf
-cp ~/skripkonyol/mailserver-conf/10-mail.conf /etc/dovecot/10-mail.conf
+cp ~/skripkonyol/mailserver-conf/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
+cp ~/skripkonyol/mailserver-conf/10-mail.conf /etc/dovecot/conf.d/10-mail.conf
 systemctl restart dovecot
 sleep 2
 
