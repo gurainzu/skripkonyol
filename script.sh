@@ -181,7 +181,7 @@ mv ~/skripkonyol/apache-conf/cacti-usk.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/cacti-usk.conf
 
 # Enabling all the apache config
-a2ensite wp-usk.conf wp-absen2.conf pma-usk.conf pma-absen.conf mail-absen.conf cacti-usk.conf
+a2ensite wp-usk.conf wp-absen.conf pma-usk.conf pma-absen.conf mail-absen.conf cacti-usk.conf
 
 systemctl restart apache2
 
