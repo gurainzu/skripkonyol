@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#Run as root pls
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
-
 #Installing BIND9
 echo "Starting Installing BIND"
 sleep 2
@@ -19,13 +13,13 @@ sleep 2
 mv /etc/bind/named.conf.local /etc/bind/named.comf.local-back
 mv /etc/bind/named.conf.options /etc/bind/named.conf.options-back
 read -p "Enter the name of your db file, example=db.usk: " dbfile1
-cp /home/antix/skripkonyol/bind9-conf/db.local /etc/bind/$dbfile1
+cp /skripkonyol/bind9-conf/db.local /etc/bind/$dbfile1
 read -p "Enter the name of your second db file, example=db.absen: " dbfile2
-cp /home/antix/skripkonyol/bind9-conf/db.local /etc/bind/$dbfile2
+cp /skripkonyol/bind9-conf/db.local /etc/bind/$dbfile2
 read -p "Enter the name of your db reverse file, example=db.172: " filedbreverse
-cp /home/antix/skripkonyol/bind9-conf/db.reverse /etc/bind/$filedbreverse
-cp /home/antix/skripkonyol/bind9-conf/named.conf.local /etc/bind/
-cp /home/antix/skripkonyol/bind9-conf/named.conf.options /etc/bind/
+cp /skripkonyol/bind9-conf/db.reverse /etc/bind/$filedbreverse
+cp /skripkonyol/bind9-conf/named.conf.local /etc/bind/
+cp /skripkonyol/bind9-conf/named.conf.options /etc/bind/
 sleep 2
 echo "Complete Copying Template Configuration"
 sleep 1
@@ -118,17 +112,17 @@ sleep 5
 clear
 
 #Configuring Virtual Host in Apache
-mv /home/antix/skripkonyol/apache-conf/wp-usk.conf /etc/apache2/sites-available/
+mv /skripkonyol/apache-conf/wp-usk.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/wp-usk.conf
-mv /home/antix/skripkonyol/apache-conf/wp-absen.conf /etc/apache2/sites-available/
+mv /skripkonyol/apache-conf/wp-absen.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/wp-absen.conf
-mv /home/antix/skripkonyol/apache-conf/pma-usk.conf /etc/apache2/sites-available/
+mv /skripkonyol/apache-conf/pma-usk.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/pma-absen.conf
-mv /home/antix/skripkonyol/apache-conf/pma-absen.conf /etc/apache2/sites-available/
+mv /skripkonyol/apache-conf/pma-absen.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/pma-absen.conf
-mv /home/antix/skripkonyol/apache-conf/mail-absen.conf /etc/apache2/sites-available/
+mv /skripkonyol/apache-conf/mail-absen.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/mail-absen.conf
-mv /home/antix/skripkonyol/apache-conf/cacti-usk.conf /etc/apache2/sites-available/
+mv /skripkonyol/apache-conf/cacti-usk.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/cacti-usk.conf
 a2ensite wp-usk.conf
 a2ensite wp-absen.conf
@@ -138,4 +132,4 @@ a2ensite mail-absen.conf
 a2ensite cacti-usk.conf
 systemctl restart apache2
 sleep 2
-echo "Complete \e[1mConfiguring VirtualHost in Apache"
+echo "Complete Configuring VirtualHost in Apache"
