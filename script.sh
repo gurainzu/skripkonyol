@@ -13,13 +13,13 @@ sleep 2
 mv /etc/bind/named.conf.local /etc/bind/named.comf.local-back
 mv /etc/bind/named.conf.options /etc/bind/named.conf.options-back
 read -p "Enter the name of your db file, example=db.usk: " dbfile1
-cp /skripkonyol/bind9-conf/db.local /etc/bind/$dbfile1
+cp /bind9-conf/db.local /etc/bind/$dbfile1
 read -p "Enter the name of your second db file, example=db.absen: " dbfile2
-cp /skripkonyol/bind9-conf/db.local /etc/bind/$dbfile2
+cp /bind9-conf/db.local /etc/bind/$dbfile2
 read -p "Enter the name of your db reverse file, example=db.172: " filedbreverse
-cp /skripkonyol/bind9-conf/db.reverse /etc/bind/$filedbreverse
-cp /skripkonyol/bind9-conf/named.conf.local /etc/bind/
-cp /skripkonyol/bind9-conf/named.conf.options /etc/bind/
+cp /bind9-conf/db.reverse /etc/bind/$filedbreverse
+cp /bind9-conf/named.conf.local /etc/bind/
+cp /bind9-conf/named.conf.options /etc/bind/
 sleep 2
 echo "Complete Copying Template Configuration"
 sleep 1
@@ -77,6 +77,7 @@ clear
 #Installing MariaDB Server
 echo "Starting Installing MariaDB Server"
 apt install mariadb-server -y
+systemctl restart mariadb
 echo "Complete Installing MariaDB Server"
 
 sleep 5
@@ -112,17 +113,17 @@ sleep 5
 clear
 
 #Configuring Virtual Host in Apache
-mv /skripkonyol/apache-conf/wp-usk.conf /etc/apache2/sites-available/
+mv /apache-conf/wp-usk.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/wp-usk.conf
-mv /skripkonyol/apache-conf/wp-absen.conf /etc/apache2/sites-available/
+mv /apache-conf/wp-absen.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/wp-absen.conf
-mv /skripkonyol/apache-conf/pma-usk.conf /etc/apache2/sites-available/
-sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/pma-absen.conf
-mv /skripkonyol/apache-conf/pma-absen.conf /etc/apache2/sites-available/
+mv /apache-conf/pma-usk.conf /etc/apache2/sites-available/
+sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/pma-usk.conf
+mv /apache-conf/pma-absen.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/pma-absen.conf
-mv /skripkonyol/apache-conf/mail-absen.conf /etc/apache2/sites-available/
+mv /apache-conf/mail-absen.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain2/g" /etc/apache2/sites-available/mail-absen.conf
-mv /skripkonyol/apache-conf/cacti-usk.conf /etc/apache2/sites-available/
+mv /apache-conf/cacti-usk.conf /etc/apache2/sites-available/
 sed -i "s/domain/$domain1/g" /etc/apache2/sites-available/cacti-usk.conf
 a2ensite wp-usk.conf
 a2ensite wp-absen.conf
@@ -133,3 +134,15 @@ a2ensite cacti-usk.conf
 systemctl restart apache2
 sleep 2
 echo "Complete Configuring VirtualHost in Apache"
+clear
+sleep 2
+
+#Installing Postfix & Dovecot for Webmail
+apt install postfix dovecot-imapd dovecot-pop3d
+echo "home_mailbox = Maildir/" >> /etc/postfix/main.cf
+maildirmake.dovecot /etc/skel/Maildir
+dpkg-reconfigure postfix
+systemctl restart postfix
+
+mv /etc/dovecot/dovecot.conf /etc/dovecot/dovecot.conf-back
+mv /etc/dovecot/ /etc/dovecot/dovecot.conf-back
